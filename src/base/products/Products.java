@@ -4,10 +4,10 @@ import base.products.ProductGrade;
 
 public class Products {
     private ProductGrade productGrade;
-    private double weight;
-    private double pricePerKg;
+    private int weight;
+    private int pricePerKg;
 
-    public Products(ProductGrade productGrade, double weight, double pricePerKg) {
+    public Products(ProductGrade productGrade, int weight, int pricePerKg) {
         this.productGrade = productGrade;
         this.weight = weight;
         this.pricePerKg = pricePerKg;
@@ -25,7 +25,7 @@ public class Products {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
@@ -33,16 +33,14 @@ public class Products {
         return pricePerKg;
     }
 
-    public void setPricePerKg(double pricePerKg) {
+    public void setPricePerKg(int pricePerKg) {
         this.pricePerKg = pricePerKg;
     }
 
     @Override
     public String toString() {
-        return "Products{" +
-                "productGrade=" + productGrade +
-                ", weight=" + weight +
-                ", pricePerKg=" + pricePerKg +
-                '}';
+        return "{Наименование = " + productGrade +
+                ", Вес=" + weight +
+                ", Цена за кг=" + pricePerKg;
     }
 }

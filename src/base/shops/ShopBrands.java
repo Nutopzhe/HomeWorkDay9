@@ -23,8 +23,7 @@ public enum ShopBrands {
 
     @Override
     public String toString() {
-        return "ShopBrands{" +
-                "name='" + name + '\'' +
+        return '\'' + name + '\'' +
                 ", id=" + id +
                 '}';
     }
