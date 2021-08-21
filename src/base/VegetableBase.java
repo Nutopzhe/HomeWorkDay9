@@ -19,7 +19,7 @@ public class VegetableBase {
             storage.add(new Box(ShopBrands.values()[random.nextInt(ShopBrands.values().length)],
                     new Products(ProductGrade.values()[random.nextInt(ProductGrade.values().length)],
                             random.nextInt(20),
-                            random.nextInt(250) + 50)));
+                            random.nextInt(250))));
         }
     }
 

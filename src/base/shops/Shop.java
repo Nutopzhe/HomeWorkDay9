@@ -2,8 +2,8 @@ package base.shops;
 
 import base.storage.Box;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Shop {
     private final ShopBrands shopBrands;
@@ -11,6 +11,44 @@ public class Shop {
 
     public Shop(ShopBrands shopBrands) {
         this.shopBrands = shopBrands;
+    }
+
+    //сортировка всех товаров магазина по цене по возрастанию
+    public List<Box> sortedStorageByPrice() {
+        return storage.stream()
+                .sorted((o1, o2) -> (int) (o1.getProduct().getPricePerKg() - o2.getProduct().getPricePerKg()))
+                .collect(Collectors.toList());
+    }
+
+    //сортировка всех товаром магазина по весу по убыванию
+    public List<Box> sortedStorageByWeightDescending() {
+        return storage.stream()
+                .sorted((o1, o2) -> (int) (o2.getProduct().getWeight() - o1.getProduct().getWeight()))
+                .collect(Collectors.toList());
+    }
+
+    //подсчет общей стоимости всех товаров (цена товара * вес)
+    public int calculatingTheTotalCostOfProducts() {
+        return storage.stream().
+                mapToInt(p -> (int) (p.getProduct().getPricePerKg() * p.getProduct().getWeight()))
+                .sum();
+    }
+
+    //подсчет общей стоимости товаров типа "фрукт" среди тех, где цена за кг < 50
+    public int calculatingTheTotalCostOfProductsWherePriceLessFifty() {
+        return storage.stream()
+                .filter(p -> p.getProduct().getProductGrade().getGrade().equalsIgnoreCase("Фрукт"))
+                .filter(p -> p.getProduct().getPricePerKg() < 50)
+                .mapToInt(p -> (int) (p.getProduct().getPricePerKg() * p.getProduct().getWeight()))
+                .sum();
+    }
+
+    public HashMap<String, Integer> calculatingTableWhereProductCorrespondsWight() {
+        HashMap<String, Integer> map = new HashMap<>();
+
+        //ДОДЕЛАТЬ!!!!
+
+        return map;
     }
 
     public ShopBrands getShopBrands() {
