@@ -1,4 +1,4 @@
-package base;
+package base.products;
 
 public enum ProductGrade {
     BANANAS,
