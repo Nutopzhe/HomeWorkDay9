@@ -1,4 +1,4 @@
-package BusStop;
+package busstop;
 
 import java.util.*;
 
