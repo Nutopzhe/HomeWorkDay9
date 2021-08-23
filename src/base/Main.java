@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         VegetableBase vegetableBase = new VegetableBase();
         //генерируем коробки к себе на базу
-        vegetableBase.generationSupply(50);
-        //генерируем магазины себе в базу магазинов
+        vegetableBase.generationSupply(20);
+        //генерируем магазины к себе в базу магазинов
         vegetableBase.generationShops();
 
 
@@ -31,6 +31,7 @@ public class Main {
 //        System.out.println(shop.calculatingTheTotalCostOfProducts());
 //        System.out.println(shop.calculatingTheTotalCostOfProductsWherePriceLessFifty());
 
+        System.out.println(shop.calculatingTableWhereProductCorrespondsWight());
 
 
     }

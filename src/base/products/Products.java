@@ -21,7 +21,7 @@ public class Products {
         this.productGrade = productGrade;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 

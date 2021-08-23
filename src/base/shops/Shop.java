@@ -23,7 +23,7 @@ public class Shop {
     //сортировка всех товаром магазина по весу по убыванию
     public List<Box> sortedStorageByWeightDescending() {
         return storage.stream()
-                .sorted((o1, o2) -> (int) (o2.getProduct().getWeight() - o1.getProduct().getWeight()))
+                .sorted((o1, o2) -> (o2.getProduct().getWeight() - o1.getProduct().getWeight()))
                 .collect(Collectors.toList());
     }
 
@@ -46,7 +46,16 @@ public class Shop {
     public HashMap<String, Integer> calculatingTableWhereProductCorrespondsWight() {
         HashMap<String, Integer> map = new HashMap<>();
 
-        //ДОДЕЛАТЬ!!!!
+        for (Box box : storage) {
+            //узнаем название и вес продукта, записываем в переменные
+            String key = box.getProduct().getProductGrade().name();
+            int weight = box.getProduct().getWeight();
+
+            if (map.containsKey(key)) {
+                map.put(key, map.get(key) + weight);
+            } else
+                map.put(box.getProduct().getProductGrade().name(), box.getProduct().getWeight());
+        }
 
         return map;
     }
