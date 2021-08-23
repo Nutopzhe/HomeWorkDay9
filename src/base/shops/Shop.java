@@ -43,6 +43,7 @@ public class Shop {
                 .sum();
     }
 
+    //расчет таблицы "товар = суммарный вес"
     public HashMap<String, Integer> calculatingTableWhereProductCorrespondsWight() {
         HashMap<String, Integer> map = new HashMap<>();
 
@@ -50,13 +51,11 @@ public class Shop {
             //узнаем название и вес продукта, записываем в переменные
             String key = box.getProduct().getProductGrade().name();
             int weight = box.getProduct().getWeight();
-
-            if (map.containsKey(key)) {
+            if (map.containsKey(key))
                 map.put(key, map.get(key) + weight);
-            } else
+            else
                 map.put(box.getProduct().getProductGrade().name(), box.getProduct().getWeight());
         }
-
         return map;
     }
 

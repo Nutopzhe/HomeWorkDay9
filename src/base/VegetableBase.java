@@ -12,7 +12,7 @@ public class VegetableBase {
     private List<Box> storage = new ArrayList<>();
     private HashMap<Integer, Shop> storeBase = new HashMap<>();
 
-    //метод наполняемости сладка базы. count - количество коробок
+    //метод наполняемости сладка базы. Count - количество коробок
     public void generationSupply(int count) {
         Random random = new Random();
         for (int i = 0; i < count; i++) {

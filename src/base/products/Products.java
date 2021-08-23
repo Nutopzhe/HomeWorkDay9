@@ -1,7 +1,5 @@
 package base.products;
 
-import base.products.ProductGrade;
-
 public class Products {
     private ProductGrade productGrade;
     private int weight;
